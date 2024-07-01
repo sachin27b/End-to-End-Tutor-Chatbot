@@ -1,14 +1,14 @@
 matplotlib
 numpy
-pandas
-scikit-learn
-seaborn
 ipykernel
-ctransformers==0.2.5
-sentence-transformers==2.2.2
-pinecone-client
-langchain==0.0.225
+scikit-learn
+ctransformers
+sentence-transformers
+pinecone-client[grpc]
+langchain-pinecone
+langchain-openai
+langchain-text-splitters
+langchain
 flask
 pypdf
 python-dotenv
--e .

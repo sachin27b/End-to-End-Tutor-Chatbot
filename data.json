@@ -1,0 +1,12 @@
+{
+    "name": "chatbot",
+    "dimension": 384,
+    "metric": "cosine",
+    "spec": {
+      "serverless": {
+        "cloud": "aws",
+        "region": "us-east-1"
+      }
+    }
+  }
+  
