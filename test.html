@@ -107,66 +107,14 @@
         <div class="chat-header">
             Chatbot
         </div>
-        <div class="chat-messages" id="chat-messages">
+        <div class="chat-messages">
             <!-- Messages will appear here -->
             <div class="message bot">Hello! How can I assist you today?</div>
         </div>
         <div class="chat-input">
-            <input type="text" id="chat-input" placeholder="Type your message here..." onkeypress="handleKeyPress(event)" />
-            <button onclick="sendMessage()">Send</button>
+            <input type="text" placeholder="Type your message here..." />
+            <button>Send</button>
         </div>
     </div>
-
-    <script>
-        function sendMessage() {
-            const inputField = document.getElementById('chat-input');
-            const messageText = inputField.value;
-
-            if (messageText.trim() === '') {
-                return;
-            }
-
-            // Create and append the user's message
-            const messageContainer = document.createElement('div');
-            messageContainer.classList.add('message', 'user');
-            messageContainer.textContent = messageText;
-            document.getElementById('chat-messages').appendChild(messageContainer);
-
-            // Clear the input field
-            inputField.value = '';
-
-            // Scroll to the bottom of the chat
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-
-            // Send the message to the server
-            fetch('/get', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `msg=${encodeURIComponent(messageText)}`,
-            })
-            .then(response => response.text())
-            .then(data => {
-                // Create and append the bot's message
-                const botMessageContainer = document.createElement('div');
-                botMessageContainer.classList.add('message', 'bot');
-                botMessageContainer.textContent = data;
-                document.getElementById('chat-messages').appendChild(botMessageContainer);
-
-                // Scroll to the bottom of the chat
-                document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
-    </script>
 </body>
 </html>
