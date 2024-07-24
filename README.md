@@ -12,8 +12,7 @@ Pinecone: Vector database for storing and querying embeddings.
 ### Installation
 Install the required dependencies:
 
-bash
-```
+```bash
 pip install langchain pinecone-client transformers sentence-transformers
 ```
 ### Usage
@@ -23,3 +22,4 @@ Initialize Pinecone: Set up Pinecone with your API key.
 - Create and Query Vector Store: Create a vector store in Pinecone and perform queries.
 - Set Up the LLM: Configure the language model for generating responses.
 - Run the Chatbot: Interact with the chatbot by providing input prompts.
+
