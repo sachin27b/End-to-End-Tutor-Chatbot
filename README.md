@@ -13,7 +13,7 @@ Pinecone: Vector database for storing and querying embeddings.
 Install the required dependencies:
 
 ```bash
-pip install langchain pinecone-client transformers sentence-transformers
+pip install -r requirements.txt
 ```
 ### Usage
 - Download Embeddings: Obtain embeddings using the sentence-transformers/all-MiniLM-L6-v2 model.
